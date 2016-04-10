@@ -32,7 +32,6 @@ import org.cyanogenmod.internal.logging.CMMetricsLogger;
 public class PrivacySettings extends SettingsPreferenceFragment {
 
     private static final String KEY_BLACKLIST = "blacklist";
-    private static final String KEY_STATS = "cmstats";
 
     private PreferenceScreen mBlacklist;
 
@@ -49,7 +48,6 @@ public class PrivacySettings extends SettingsPreferenceFragment {
         boolean isOwner = Utils.isUserOwner();
         if (!isOwner) {
             PreferenceScreen root = getPreferenceScreen();
-            root.removePreference(findPreference(KEY_STATS));
         }
 
         // Determine options based on device telephony support
